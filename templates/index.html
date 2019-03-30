@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id='heading'
+<h1>The Top 20 Most Streamed Songs on Spotify!</h1>
+</div>
+
+<p>Click the name of the song for more information.</p>
+
+<!-- pairs is a list that must be sent here by a route function
+
+     The list will contain 45 pairs: a presidency number, and a
+     president's name -->
+
+    <ol>
+    {% for pair in pairs %}
+        <li><a href="{{ url_for( 'detail', num=pair[0] ) }}">{{ pair[1] }}</a></li>
+    {% endfor %}
+  </ol>
+
+{% endblock %}
